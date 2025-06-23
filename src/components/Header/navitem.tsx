@@ -9,6 +9,7 @@ import {
 import { MenuItemProps } from "@/types";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
+import { getIcon } from "@/lib/iconMap";
 export interface INavItemProps {
   menuItem: MenuItemProps[];
 }
@@ -17,7 +18,7 @@ export default function NavItem({ menuItem }: INavItemProps) {
   return (
     <div className="hidden items-center gap-x-2 lg:flex">
       <NavigationMenu>
-        <NavigationMenuList className="p-0">
+        <NavigationMenuList className="flex gap-6 p-0">
           {menuItem &&
             menuItem?.length > 0 &&
             menuItem?.map((item: MenuItemProps) => (
@@ -32,7 +33,7 @@ export default function NavItem({ menuItem }: INavItemProps) {
                       aria-label={item.title}
                       passHref
                     >
-                      {item.title}
+                      {getIcon(item.icon)}
                     </Link>
                   </NavigationMenuTrigger>
                 ) : (
@@ -42,7 +43,7 @@ export default function NavItem({ menuItem }: INavItemProps) {
                     className={"bg-transparent px-4 py-2 text-base font-medium"}
                     passHref
                   >
-                    {item.title}
+                    {getIcon(item.icon)}
                   </Link>
                 )}
 
@@ -88,7 +89,7 @@ const ListItem = ({
         href={`${href}`}
         aria-label={title}
         className={cn(
-          "hover:bg-accent hover:text-primary focus:bg-accent focus:text-primary transition-colors mb-0 block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden select-none",
+          "hover:bg-accent hover:text-primary focus:bg-accent focus:text-primary mb-0 block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
           className,
         )}
         {...props}

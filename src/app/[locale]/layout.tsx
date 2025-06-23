@@ -109,10 +109,12 @@ export default async function RootLayout({
       <body className={`bg-white text-base ${outfit.variable} font-sans`}>
         <link rel="icon" href="/favicon.png" />
         <Header locale={locale} />
-        <main className="main">{children}</main>
+        <main className="main pt-[55px] md:pt-[80px]">{children}</main>
 
         <Suspense fallback={<div>Loading...</div>}>
-          <Footer />
+          <div className="border-t border-gray-200">
+            <Footer />
+          </div>
         </Suspense>
         <CookieConsentBanner />
       </body>

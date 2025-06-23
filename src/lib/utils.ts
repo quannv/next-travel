@@ -50,3 +50,11 @@ export function isJSON(value: any) {
     return false;
   }
 }
+
+export const convertSlugTitle = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, "")
+    .trim()
+    .split(/\s+/)
+    .join("-");

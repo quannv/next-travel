@@ -23,6 +23,7 @@ export interface MenuItemProps {
   url?: string;
   id: number;
   children?: MenuItemProps[];
+  icon?: string;
 }
 
 export interface MenuProps {
@@ -325,5 +326,3 @@ export interface ITourCalendarPrice {
   date: string;
   adult_price: string;
 }
-
-

@@ -148,6 +148,8 @@
   }
 }
 
+
+
 @utility h-70 {
   height: 70%;
 }
@@ -231,3 +233,11 @@ body {
 .flex-between {
   @apply flex items-center justify-between;
 }
+
+.bg-gradient-custom {
+  background: linear-gradient(to right,
+      rgb(248, 246, 237) 0%,
+      rgba(248, 246, 237, 0.1) 50%,
+      rgba(248, 246, 237, 0) 100%);
+}
+

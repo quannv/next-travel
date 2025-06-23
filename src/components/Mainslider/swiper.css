@@ -1,0 +1,25 @@
+.slider-container {
+  width   : 100%;
+  overflow: hidden;
+}
+
+.infinite-slider .swiper-wrapper {
+  display  : flex;
+  width    : max-content;
+  animation: slide 18000ms linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-350px * 5));
+  }
+}
+
+.infinite-slider .swiper-wrapper {
+  transition: none !important;
+}
+
